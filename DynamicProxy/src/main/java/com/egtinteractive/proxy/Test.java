@@ -12,7 +12,7 @@ public final class Test {
 	final ClassLoader classLoader = testClass.getClassLoader();
 	final Class<?>[] interfaces = new Class[] { Map.class };
 	final Map<String, Integer> map = new HashMap<>();
-	final DynamicProxy dynamicProxy = new DynamicProxy(map);
+	final CustomHandler dynamicProxy = new CustomHandler(map);
 
 	@SuppressWarnings("unchecked")
 	final Map<String, Integer> proxy = (HashMap<String, Integer>) Proxy.newProxyInstance(classLoader, interfaces,
